@@ -1,0 +1,11 @@
+logging:
+  pattern:
+    dateformat: MM-dd HH:mm:ss:SSS
+
+spring:
+  rabbitmq:
+    host: 192.168.244.130 # 你的虚拟机IP
+    port: 5672 # 端口 15672是控制台端口，不要连错了
+    virtual-host: /hmall # 虚拟主机
+    username: hmall # 用户名
+    password: 123456 # 密码
