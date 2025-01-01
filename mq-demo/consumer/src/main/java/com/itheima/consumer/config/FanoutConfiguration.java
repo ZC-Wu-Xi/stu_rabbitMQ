@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
  * @description 被动创建(如果没有就创建)fanout交换机及队列
  * 基于javaBean方式创建 代码太臃肿，太复杂
  */
-@Configuration
+//@Configuration
 public class FanoutConfiguration {
 
     @Bean

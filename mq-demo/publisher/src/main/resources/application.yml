@@ -1,6 +1,8 @@
 logging:
   pattern:
     dateformat: MM-dd HH:mm:ss:SSS
+  level:
+    com.itheima: debug
 
 spring:
   rabbitmq:
@@ -9,3 +11,22 @@ spring:
     virtual-host: /hmall # 虚拟主机
     username: hmall # 用户名
     password: 123456 # 密码
+
+    # rabbitmq高级
+    # 生产者重试
+    connection-timeout: 1s # 设置MQ的连接超时时间
+    template:
+      retry: # 生产者重试机制
+        enabled: true # 开启超时重试机制
+        initial-interval: 1000ms # 失败后的初始等待时间
+        multiplier: 1 # 失败后下次的等待时长倍数，下次等待时长 = `initial-interval` * `multiplier`
+        max-attempts: 3 # 最大重试次数
+    # 生产者确认
+    # publisher-confirm-type: correlated # 开启publisher confirm机制，并设置confirm类型
+      # - `none`：关闭confirm机制
+      # - `simple`：同步阻塞等待MQ的回执
+      # - `correlated`：MQ异步回调返回回执
+    # publisher-returns: true # 开启publisher return消息确认机制 开启后性能会变差，测试完后我们把它关闭
+
+    publisher-confirm-type: none # 关闭publisher-confirm消息确认机制
+    publisher-returns: false # 关闭publisher return消息确认机制

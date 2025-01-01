@@ -2,10 +2,12 @@ package com.itheima.consumer.mq;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.core.ExchangeTypes;
+import org.springframework.amqp.core.Message;
 import org.springframework.amqp.rabbit.annotation.Exchange;
 import org.springframework.amqp.rabbit.annotation.Queue;
 import org.springframework.amqp.rabbit.annotation.QueueBinding;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
+import org.springframework.amqp.support.converter.MessageConversionException;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalTime;
@@ -27,8 +29,27 @@ public class SpringRabbitListener {
      * @param message
      */
     @RabbitListener(queues = "simple.queue")
-    public void listenSimpleQueue(String message) {
+    /*public void listenSimpleQueue(String message) {
         log.info("接收到simple.queue的消息：【{}】", message);
+        if (true) {
+//            throw new RuntimeException("故意的"); // 运行时异常 返回nack
+//            throw new MessageConversionException("故意的"); // 消息转化异常 返回reject
+
+        }
+        log.info("消息处理完成");
+    }*/
+    /**
+     * 监听simple队列的同时获取更加详细的内容(使用message对象接收消息)
+     */
+    public void listenSimpleQueue(Message message) {
+        log.info("接收到simple.queue的消息ID:【{}】", message.getMessageProperties().getMessageId());
+        log.info("接收到simple.queue的消息:【{}】", new String(message.getBody()));
+        if (true) {
+//            throw new RuntimeException("故意的"); // 运行时异常 返回nack
+//            throw new MessageConversionException("故意的"); // 消息转化异常 返回reject
+
+        }
+        log.info("消息处理完成");
     }
 
 
@@ -42,7 +63,7 @@ public class SpringRabbitListener {
      * 来实现能者多劳
      * @param message
      */
-    @RabbitListener(queues = "work.queue")
+//    @RabbitListener(queues = "work.queue")
     public void listenWorkQueue1(String message) throws InterruptedException {
         System.out.println("消费者1接收到的消息message：" + message + "," + LocalTime.now());
         Thread.sleep(25);
@@ -54,7 +75,7 @@ public class SpringRabbitListener {
      * 休眠用于模拟不同服务器的性能不同
      * @param message
      */
-    @RabbitListener(queues = "work.queue")
+//    @RabbitListener(queues = "work.queue")
     public void listenWorkQueue2(String message) throws InterruptedException {
         System.err.println("消费者2接收到的消息message：" + message + "," + LocalTime.now());
         Thread.sleep(200);
@@ -65,7 +86,7 @@ public class SpringRabbitListener {
      * 发现该交换机发送到的两个队列都收到了同样的消息
      * @param message
      */
-    @RabbitListener(queues = "fanout.queue1")
+//    @RabbitListener(queues = "fanout.queue1")
     public void listenFanoutQueue1(String message) {
         log.info("消费者1接收到fanout.queue1.queue的消息：【{}】", message);
     }
@@ -74,7 +95,7 @@ public class SpringRabbitListener {
      * 测试fanout模式交换机
      * @param message
      */
-    @RabbitListener(queues = "fanout.queue2")
+//    @RabbitListener(queues = "fanout.queue2")
     public void listenFanoutQueue2(String message) {
         log.info("消费者2接收到fanout.queue2.queue的消息：【{}】", message);
     }
@@ -115,7 +136,7 @@ public class SpringRabbitListener {
      * 发现该交换机发送到的两个队列根据消息的RoutingKey(可以使用通配符)接受了消息
      * @param message
      */
-    @RabbitListener(queues = "topic.queue1")
+//    @RabbitListener(queues = "topic.queue1")
     public void listenTopicQueue1(String message) {
         log.info("消费者1接收到topic.queue1的消息：【{}】", message);
     }
@@ -124,7 +145,7 @@ public class SpringRabbitListener {
      * 测试topic模式交换机
      * @param message
      */
-    @RabbitListener(queues = "topic.queue2")
+//    @RabbitListener(queues = "topic.queue2")
     public void listenTopicQueue2(String message) {
         log.info("消费者2接收到topic.queue2的消息：【{}】", message);
     }
@@ -138,7 +159,7 @@ public class SpringRabbitListener {
      *  - 可读性差
      * @param msg
      */
-    @RabbitListener(queues = "object.queue")
+//    @RabbitListener(queues = "object.queue")
     public void listenObjectQueue(Map<String, Object> msg) {
         log.info("消费者1接收到topic.queue2的消息：【{}】", msg);
     }
