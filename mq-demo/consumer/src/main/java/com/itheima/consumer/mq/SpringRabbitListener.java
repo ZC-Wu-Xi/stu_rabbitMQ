@@ -163,4 +163,30 @@ public class SpringRabbitListener {
     public void listenObjectQueue(Map<String, Object> msg) {
         log.info("消费者1接收到topic.queue2的消息：【{}】", msg);
     }
+
+    /**
+     * 使用死信交换机实现延迟消息
+     * @param message
+     */
+    @RabbitListener(bindings = @QueueBinding(
+            value = @Queue(name = "dlx.queue", durable = "true"),
+            exchange = @Exchange(name = "dlx.direct", type = ExchangeTypes.DIRECT),
+            key = {"hi"}
+    ))
+    public void listenDlxQueue(String message) {
+        log.info("消费者接收到 dlx.queue 的延迟消息：【{}】", message);
+    }
+
+    /**
+     * 使用插件实现延迟消息
+     * @param msg
+     */
+    @RabbitListener(bindings = @QueueBinding(
+            value = @Queue(name = "delay.queue", durable = "true"),
+            exchange = @Exchange(name = "delay.direct", delayed = "true"),
+            key = "delay"
+    )) // durable = "true"是插件的，使用这个属性可以实现延迟消息
+    public void listenDelayMessage(String msg){
+        log.info("接收到delay.queue的延迟消息：{}", msg);
+    }
 }

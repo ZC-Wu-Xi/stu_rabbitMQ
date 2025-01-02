@@ -2,9 +2,11 @@ package com.itheima.publisher;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
+import org.springframework.amqp.AmqpException;
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.core.MessageBuilder;
 import org.springframework.amqp.core.MessageDeliveryMode;
+import org.springframework.amqp.core.MessagePostProcessor;
 import org.springframework.amqp.rabbit.connection.CorrelationData;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -176,5 +178,42 @@ class SpringAmqpTest {
             rabbitTemplate.convertAndSend("simple.queue", message);
 //            rabbitTemplate.convertAndSend("lazy.queue", message); // lazyqueue的这种模式并发更好，而且不走内存，直接写到磁盘
         }
+    }
+
+    /**
+     * 发送延迟消息(带有过期时间的消息)
+     * 使用死信交换机
+     */
+    @Test
+    public void testSendDelayMessage() {
+  /*     rabbitTemplate.convertAndSend("normal.direct", "hi", "hello,我是延迟消息", new MessagePostProcessor() {
+           @Override
+           public Message postProcessMessage(Message message) throws AmqpException {
+               message.getMessageProperties().setExpiration("10000"); // 设置消息的过期时间 1000ms 即 10s
+               return message;
+           }
+       });*/
+       rabbitTemplate.convertAndSend("normal.direct", "hi", "hello,我是延迟消息", message -> {
+           message.getMessageProperties().setExpiration("10000"); // 设置消息的过期时间 1000ms 即 10s
+           return message;
+       });
+    }
+
+    /**
+     * 使用插件实现延迟消息(插件需自行下载到rabbitmq)
+     */
+    @Test
+    void testSendDelayMessageByPlugin() {
+        // 1.创建消息
+        String message = "hello, delayed message";
+        // 2.发送消息，利用消息后置处理器添加消息头
+        rabbitTemplate.convertAndSend("delay.direct", "delay", message, new MessagePostProcessor() {
+            @Override
+            public Message postProcessMessage(Message message) throws AmqpException {
+                // 添加延迟消息属性
+                message.getMessageProperties().setDelay(10000); // 使用插件实现延迟消息需要设置setDelay属性 10000ms
+                return message;
+            }
+        });
     }
 }

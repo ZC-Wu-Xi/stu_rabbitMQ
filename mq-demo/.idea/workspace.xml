@@ -5,20 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="73f0b0b7-0e78-4a70-8097-aeaa40450641" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/consumer/src/main/java/com/itheima/consumer/config/ErrorMessageConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/publisher/src/main/java/com/itheima/publisher/config/MQConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/java/com/itheima/consumer/config/NormalConfiguration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RabbitMq.md" beforeDir="false" afterPath="$PROJECT_DIR$/../RabbitMq.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/consumer/src/main/java/com/itheima/consumer/config/FanoutConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/consumer/src/main/java/com/itheima/consumer/config/FanoutConfiguration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/consumer/src/main/java/com/itheima/consumer/mq/SpringRabbitListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/consumer/src/main/java/com/itheima/consumer/mq/SpringRabbitListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/consumer/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/consumer/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/consumer/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/consumer/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/consumer/target/classes/com/itheima/consumer/config/FanoutConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/consumer/target/classes/com/itheima/consumer/config/FanoutConfiguration.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/consumer/target/classes/com/itheima/consumer/mq/SpringRabbitListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/consumer/target/classes/com/itheima/consumer/mq/SpringRabbitListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/publisher/src/main/java/com/itheima/publisher/PublisherApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/publisher/src/main/java/com/itheima/publisher/PublisherApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/publisher/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/publisher/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/publisher/src/test/java/com/itheima/publisher/SpringAmqpTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/publisher/src/test/java/com/itheima/publisher/SpringAmqpTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/publisher/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/publisher/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/publisher/target/test-classes/com/itheima/publisher/SpringAmqpTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/publisher/target/test-classes/com/itheima/publisher/SpringAmqpTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,41 +52,43 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;JUnit.SpringAmqpTest.testConfirmCallback.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.SpringAmqpTest.testDirectQueue.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.SpringAmqpTest.testFanoutQueue.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.SpringAmqpTest.testSendMessage.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.SpringAmqpTest.testSendObject.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.SpringAmqpTest.testSimpleQueue.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.SpringAmqpTest.testTopicQueue.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.SpringAmqpTest.testWorkQueue.executor&quot;: &quot;Run&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;Spring Boot.ConsumerApplication.executor&quot;: &quot;Debug&quot;,
-    &quot;Spring Boot.PublisherApplication.executor&quot;: &quot;Run&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/workspace/stuspace/javaProject/stu_RabbitMQ/mq-demo&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;GrepConsole&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JUnit.SpringAmqpTest.testConfirmCallback.executor": "Run",
+    "JUnit.SpringAmqpTest.testDirectQueue.executor": "Run",
+    "JUnit.SpringAmqpTest.testFanoutQueue.executor": "Run",
+    "JUnit.SpringAmqpTest.testSendDelayMessage.executor": "Run",
+    "JUnit.SpringAmqpTest.testSendDelayMessageByPlugin.executor": "Run",
+    "JUnit.SpringAmqpTest.testSendMessage.executor": "Run",
+    "JUnit.SpringAmqpTest.testSendObject.executor": "Run",
+    "JUnit.SpringAmqpTest.testSimpleQueue.executor": "Run",
+    "JUnit.SpringAmqpTest.testTopicQueue.executor": "Run",
+    "JUnit.SpringAmqpTest.testWorkQueue.executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Spring Boot.ConsumerApplication.executor": "Debug",
+    "Spring Boot.PublisherApplication.executor": "Run",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/workspace/stuspace/javaProject/stu_RabbitMQ/mq-demo",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "GrepConsole",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -115,8 +108,8 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.SpringAmqpTest.testSimpleQueue">
-    <configuration name="SpringAmqpTest.testConfirmCallback" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.SpringAmqpTest.testSendDelayMessageByPlugin">
+    <configuration name="SpringAmqpTest.testSendDelayMessage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="publisher" />
       <extension name="coverage">
         <pattern>
@@ -126,7 +119,23 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.itheima.publisher" />
       <option name="MAIN_CLASS_NAME" value="com.itheima.publisher.SpringAmqpTest" />
-      <option name="METHOD_NAME" value="testConfirmCallback" />
+      <option name="METHOD_NAME" value="testSendDelayMessage" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpringAmqpTest.testSendDelayMessageByPlugin" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="publisher" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.itheima.publisher.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.itheima.publisher" />
+      <option name="MAIN_CLASS_NAME" value="com.itheima.publisher.SpringAmqpTest" />
+      <option name="METHOD_NAME" value="testSendDelayMessageByPlugin" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -177,26 +186,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PublisherApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="publisher" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.itheima.publisher.PublisherApplication" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.itheima.publisher.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.SpringAmqpTest.testSendDelayMessageByPlugin" />
         <item itemvalue="Spring Boot.ConsumerApplication" />
+        <item itemvalue="JUnit.SpringAmqpTest.testSendDelayMessage" />
         <item itemvalue="JUnit.SpringAmqpTest.testSimpleQueue" />
         <item itemvalue="JUnit.SpringAmqpTest.testSendMessage" />
-        <item itemvalue="JUnit.SpringAmqpTest.testConfirmCallback" />
-        <item itemvalue="Spring Boot.PublisherApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -222,6 +218,7 @@
       <workItem from="1735536827261" duration="4428000" />
       <workItem from="1735541884210" duration="7201000" />
       <workItem from="1735718368595" duration="3929000" />
+      <workItem from="1735807459710" duration="2454000" />
     </task>
     <servers />
   </component>
